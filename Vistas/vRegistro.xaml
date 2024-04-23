@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="jccajamarcaExamen.Vistas.vRegistro"
+             Title="vRegistro">
+    <VerticalStackLayout>
+
+        <Label x:Name="lbUsuario"
+                   TextColor="Red"
+                   FontSize="14"
+                   HorizontalTextAlignment="End"/>
+
+        <Label 
+                Text="REGISTRO"
+                TextColor="Blue"
+                FontSize="22"
+                HorizontalTextAlignment="Center"/>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Label Text="Nombre" Margin="15,10"
+                   FontSize="20"
+                   VerticalOptions="Center"
+                   Grid.Row="0"
+                   Grid.Column="0"/>
+            <Entry x:Name="txtNombre"
+                Grid.Row="1"
+               Grid.Column="0"
+            Placeholder="Ingrese nombre"/>
+            <Label Text="Apellido" Margin="15,10"
+                   FontSize="20"
+                   VerticalOptions="Center"
+                   Grid.Row="0"
+                   Grid.Column="1"/>
+            <Entry x:Name="txtApellido"
+                Grid.Row="1"
+               Grid.Column="1"
+            Placeholder="Ingrese Apellido"/>
+            <Label Text="Edad" Margin="15,10"
+                   FontSize="20"
+                   VerticalOptions="Center"
+                   Grid.Row="0"
+                   Grid.Column="2"/>
+            <Entry x:Name="txtEdad"
+                Grid.Row="1"
+               Grid.Column="2"
+            Placeholder="Ingrese Apellido"/>
+
+        </Grid>
+
+
+        <Grid>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <DatePicker x:Name="dpFecha" 
+                MinimumDate="{Binding MinDate}" 
+                        MaximumDate="{Binding MaxDate}" 
+                        Date="{Binding SelectedDate}"
+                   Grid.Row="0"
+                   Grid.Column="0"/>
+
+            <Picker x:Name="pkPais" 
+                Title="SELECCIONE EL PAIS"
+                TextColor="DarkBlue"
+                        SelectedIndexChanged="pkPais_SelectedIndexChanged"
+                   Grid.Row="1"
+                   Grid.Column="0">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>ECUADOR</x:String>
+                        <x:String>COLOMBIA</x:String>
+                        <x:String>PERU</x:String>
+                        <x:String>CHILE</x:String>
+
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+            <Picker x:Name="pkCiudad" 
+                    Title="SELECCIONE LA CIUDAD"
+                    TextColor="DarkBlue"
+                        SelectedIndexChanged="pkCiudad_SelectedIndexChanged"
+                    Grid.Row="2"
+                   Grid.Column="0">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>QUITO</x:String>
+                        <x:String>CARTAJENA</x:String>
+                        <x:String>CUZCO</x:String>
+                        <x:String>CHILE</x:String>
+
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+            <Label Text="Monto Inicial" Margin="15,10"
+                   FontSize="20"
+                   VerticalOptions="Center"
+                   Grid.Row="3"
+                   Grid.Column="0"/>
+            <Entry x:Name="txtMontoIni"
+                Grid.Row="3"
+               Grid.Column="1"
+            Placeholder="Ingrese El monto inicial"/>
+            <Label Text="Pago Mensual" Margin="15,10"
+                   FontSize="20"
+                   VerticalOptions="Center"
+                   Grid.Row="4"
+                   Grid.Column="0"/>
+            <Entry x:Name="txtPagoMen"
+                Grid.Row="4"
+               Grid.Column="1"
+            Placeholder="Ingrese El pago mensual"/>
+
+        </Grid>
+
+        <Grid>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <Button x:Name="btnCalcular"
+                Text="Calcular PAgo Mensual"
+                CornerRadius="30"
+                WidthRequest="300"  
+                Grid.Row="0"
+                Grid.Column="0"
+                    Clicked="btnCalcular_Clicked"/>
+            <Button x:Name="btnResumen"
+                Text="RESUMEN"
+                CornerRadius="30"
+                WidthRequest="300"  
+                Grid.Row="0"
+                Grid.Column="1"
+                    Clicked="btnResumen_Clicked"/>
+            
+        </Grid>
+        <Label x:Name="resultado"
+        Text="Resultado"/>
+
+
+
+
+    </VerticalStackLayout>
+</ContentPage>

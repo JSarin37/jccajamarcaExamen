@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="jccajamarcaExamen.Vistas.vLogin"
+             Title="vLogin">
+    <VerticalStackLayout
+        Padding="30,0"
+        Spacing="25">
+        <Label 
+                Text="Examen Parcial1"
+                TextColor="Red"
+                FontSize="20"
+                HorizontalTextAlignment="Center"/>
+        <Image Source="logo.png"
+               HeightRequest="175"/>
+
+        <Grid>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <Label Text="Usuario" Margin="15,10"
+                   FontSize="20"
+                   VerticalOptions="Center"
+
+                   Grid.Row="0"
+                   Grid.Column="0"/>
+            <Entry x:Name="txtUsuario"
+                Grid.Row="0"
+               Grid.Column="1"
+            Placeholder="Ingrese Usuario"
+            />
+            <Label Text="Contraseña" Margin="15,10"
+                   FontSize="20"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Start"
+                   
+                   Grid.Row="1"
+                   Grid.Column="0"/>
+            <Entry x:Name="txtContraseña"
+               Placeholder="Ingrese la Contraseña"
+                Grid.Row="1"
+                Grid.Column="1"
+               IsPassword="True"/>
+
+            <Button x:Name="btnInicio"
+                Text="INICIAR SESION"
+                CornerRadius="30"
+                WidthRequest="300"  
+                Grid.Row="2"
+                Grid.Column="0"
+                Clicked="btnInicio_Clicked"/>
+            <Button x:Name="btnAcercade"
+                Text="ACERCA DE"
+                CornerRadius="30"
+                WidthRequest="300"  
+                Grid.Row="2"
+                Grid.Column="1"
+                Clicked="btnAcercade_Clicked"/>
+            <Label x:Name="LoginStatus"
+               Text=""
+               FontAttributes="Bold"
+               HorizontalOptions="Center"/>
+
+
+
+
+
+        </Grid>
+
+
+
+    </VerticalStackLayout>
+</ContentPage>
